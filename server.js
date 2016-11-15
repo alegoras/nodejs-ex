@@ -153,7 +153,6 @@ app.get('/dbget', function (req, res) {
     db.collection('users').find({ "name": "sue" }).toArray(function(err,data){
       res.send("user: "+data);
     });
-    res.end();
   } else {
     res.send('not finded');
   }
