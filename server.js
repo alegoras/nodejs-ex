@@ -150,9 +150,9 @@ app.get('/dbget', function (req, res) {
     initDb(function(err){});
   }
   if (db) {
-    var finded = db.collection('users').find({ "name": "sue" }).toArray(function(err,data){
-      res.send('data: '+data)
-    })
+    db.collection('users').find({ "name": "sue" }).toArray(function(err,data){
+      res.send('data: '+JSON.stringify(data));
+    });
   } else {
     res.send('not finded');
   }
