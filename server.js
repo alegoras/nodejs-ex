@@ -125,19 +125,37 @@ app.get('/pagecount', function (req, res) {
 app.get('/dbini', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-  db.users.insertOne(
-     {
-        name: "sue",
-        age: 19,
-        status: "P"
-     }
-  )
+  if (!db) {
+    initDb(function(err){});
+  }
+  if (db) {
+    db.collection('users').insertOne(
+       {
+          name: "sue",
+          age: 19,
+          status: "P"
+       },function (){
+          res.send('{ pageCount: ' + count + '}');
+       }
+    )
+  } else {
+    res.send('not inserted');
+  }
 });
 
 app.get('/dbget', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-  db.users.find({ "name": "sue" })
+  // initialized.
+  if (!db) {
+    initDb(function(err){});
+  }
+  if (db) {
+    db.users.find({ "name": "sue" })
+  } else {
+    res.send('not finded');
+  }
+
 });
 
 // error handling
