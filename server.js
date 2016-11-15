@@ -134,10 +134,9 @@ app.get('/dbini', function (req, res) {
           name: "sue",
           age: 19,
           status: "P"
-       },function (){
-          res.send('{ pageCount: ' + count + '}');
        }
     )
+    res.send('inserted');
   } else {
     res.send('not inserted');
   }
@@ -151,7 +150,7 @@ app.get('/dbget', function (req, res) {
     initDb(function(err){});
   }
   if (db) {
-    db.users.find({ "name": "sue" })
+    db.collection('users').find({ "name": "sue" })
   } else {
     res.send('not finded');
   }
