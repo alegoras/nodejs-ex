@@ -125,12 +125,19 @@ app.get('/pagecount', function (req, res) {
 app.get('/dbini', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-  MongoClient.connect(url, function(err, db) {
-    assert.equal(null, err);
-    insertDocument(db, function() {
-        db.close();
-    });
-  });
+  db.users.insertOne(
+     {
+        name: "sue",
+        age: 19,
+        status: "P"
+     }
+  )
+});
+
+app.get('/dbget', function (req, res) {
+  // try to initialize the db on every request if it's not already
+  // initialized.
+  db.users.find({ "name": "sue" })
 });
 
 // error handling
