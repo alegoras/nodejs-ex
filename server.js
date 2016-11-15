@@ -150,7 +150,8 @@ app.get('/dbget', function (req, res) {
     initDb(function(err){});
   }
   if (db) {
-    db.collection('users').find({ "name": "sue" })
+    var finded = db.collection('users').find({ "name": "sue" })
+    res.send(finded);
   } else {
     res.send('not finded');
   }
