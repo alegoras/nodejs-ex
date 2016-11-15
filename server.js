@@ -145,7 +145,7 @@ app.get('/dbini', function (req, res) {
 app.get('/dbget', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-  // initialized.
+  res.contentType("text/html");
   if (!db) {
     initDb(function(err){});
   }
