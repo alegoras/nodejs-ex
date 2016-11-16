@@ -151,7 +151,7 @@ app.get('/dbget', function (req, res) {
   }
   if (db) {
     db.collection('users').find({ "name": "sue" }).forEach(function(err,data){
-      res.write("user: "+JSON.stringify(data));
+      res.write("user: "+JSON.stringify(err.name));
     });
   } else {
     res.send('not finded');
