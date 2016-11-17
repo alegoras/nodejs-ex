@@ -145,14 +145,12 @@ app.get('/dbini', function (req, res) {
 app.get('/dbget', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-  res.contentType("text/html");
+  res.contentType("application/json");
   if (!db) {
     initDb(function(err){});
   }
   if (db) {
-    db.collection('users').find({ "name": "sue" }).forEach(function(err,data){
-      res.write("user: "+JSON.stringify(err.name));
-    }).toArray(function(err,data){
+    db.collection('users').find({ "name": "sue" }).toArray(function(err,data){
       res.send(data);
     });
   } else {
