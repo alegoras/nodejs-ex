@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+
+<head>
+	<title>Get Users</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	    $("#get").click(function(){
+	        $(this).hide();
+			//var menuId = $( "ul.nav" ).first().attr( "id" );
+			var request = $.ajax({
+			  url: "dbget",
+			  method: "GET",
+			  //data: { id : menuId },
+			  dataType: "json"
+			});
+			 
+			request.done(function( msg ) {
+			  $( "#users" ).html( msg );
+			});
+			 
+			request.fail(function( jqXHR, textStatus ) {
+			  alert( "Request failed: " + textStatus );
+			});
+	    });
+	});
+	</script>
+
+</head>
+
+<body>
+	<h1>Users</h1>
+	<div id="users"></div>
+	<button id="get">Get</button>
+</body>
+
+</html>

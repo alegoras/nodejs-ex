@@ -159,6 +159,10 @@ app.get('/dbget', function (req, res) {
 
 });
 
+app.get('/getusers', function (req, res) {
+  res.render('getusers.html');
+});
+
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
