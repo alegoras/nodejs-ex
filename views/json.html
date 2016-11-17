@@ -19,7 +19,7 @@
 			 
 			request.done(function( msg ) {
 				console.log(msg);
-			  $( "#users" ).html( msg );
+			  $( "#users" ).text( msg );
 			});
 			 
 			request.fail(function( jqXHR, textStatus ) {
