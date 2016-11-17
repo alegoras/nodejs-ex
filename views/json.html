@@ -19,7 +19,7 @@
 			 
 			request.done(function( msg ) {
 				console.log(msg);
-				$.each(data,function(i,item){
+				$.each(msg,function(i,item){
 					$( "#users" ).text( "<p><span>Name: </span>"+item.name+"</p>" );
 				});
 			});
