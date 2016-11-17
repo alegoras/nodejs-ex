@@ -19,7 +19,9 @@
 			 
 			request.done(function( msg ) {
 				console.log(msg);
-			  $( "#users" ).text( msg );
+				$.each(data,function(i,item){
+					$( "#users" ).text( "<p><span>Name: </span>"+item.name+"</p>" );
+				});
 			});
 			 
 			request.fail(function( jqXHR, textStatus ) {
