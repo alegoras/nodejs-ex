@@ -18,9 +18,10 @@
 			});
 			 
 			request.done(function( msg ) {
-				console.log(msg);
-				$.each(msg,function(i,item){
-					$( "#users" ).text( "<p><span>Name: </span>"+item.name+"</p>" );
+				//console.log(msg);
+				$.each(msg, function(i,item){
+					console.log(i,item)
+					$( "#users" ).html( "<p><span>Name: </span>"+item.name+"</p>" );
 				});
 			});
 			 
