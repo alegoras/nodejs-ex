@@ -8,7 +8,7 @@
 	<script>
 	$(document).ready(function(){
 	    $("#get").click(function(){
-	        $(this).hide();
+	        //$(this).hide();
 			//var menuId = $( "ul.nav" ).first().attr( "id" );
 			var request = $.ajax({
 			  url: "dbget",
@@ -18,11 +18,12 @@
 			});
 			 
 			request.done(function( msg ) {
+				console.log(msg);
 			  $( "#users" ).html( msg );
 			});
 			 
 			request.fail(function( jqXHR, textStatus ) {
-			  alert( "Request failed: " + textStatus );
+			  console.log( "Request failed: " + textStatus );
 			});
 	    });
 	});
