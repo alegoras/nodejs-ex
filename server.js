@@ -160,7 +160,7 @@ app.get('/dbget', function (req, res) {
 });
 
 app.get('/getusers', function (req, res) {
-  res.render('getusers.html');
+  res.render('json.html');
 });
 
 // error handling
