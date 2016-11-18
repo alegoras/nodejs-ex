@@ -20,8 +20,13 @@
 			request.done(function( msg ) {
 				//console.log(msg);
 				$.each(msg, function(i,item){
-					console.log(i,item)
-					$( "#users" ).append( "<p><span>"+i+": </span>"+item.name+"</p>" );
+					//console.log(i,item)
+					var txt = "<p>";
+					$.each(item, function(key,val){
+						txt += ""+key+": "+val+"";
+					});
+					txt += "</p>";
+					$( "#users" ).html( txt );
 				});
 			});
 			 
