@@ -19,9 +19,10 @@
 			 
 			request.done(function( msg ) {
 				//console.log(msg);
+				var txt ="";
 				$.each(msg, function(i,item){
 					//console.log(i,item)
-					var txt = "<p>";
+					txt += "<p>";
 					$.each(item, function(key,val){
 						txt += ""+key+": "+val+"<br>";
 					});
