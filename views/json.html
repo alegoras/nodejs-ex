@@ -23,11 +23,11 @@
 					//console.log(i,item)
 					var txt = "<p>";
 					$.each(item, function(key,val){
-						txt += ""+key+": "+val+"";
+						txt += ""+key+": "+val+"<br>";
 					});
 					txt += "</p>";
-					$( "#users" ).html( txt );
 				});
+				$( "#users" ).html( txt );
 			});
 			 
 			request.fail(function( jqXHR, textStatus ) {
