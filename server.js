@@ -17,11 +17,11 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 
 if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
   var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
-      mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
-      mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'],
-      mongoDatabase = process.env[mongoServiceName + '_DATABASE'],
-      mongoPassword = process.env[mongoServiceName + '_PASSWORD']
-      mongoUser = process.env[mongoServiceName + '_USER'];
+      mongoHost = "ds133338.mlab.com",//process.env[mongoServiceName + '_SERVICE_HOST'],
+      mongoPort = "33338",//process.env[mongoServiceName + '_SERVICE_PORT'],
+      mongoDatabase = "alcoholapp",//process.env[mongoServiceName + '_DATABASE'],
+      mongoPassword = "legolas"//process.env[mongoServiceName + '_PASSWORD']
+      mongoUser = "aleg"//process.env[mongoServiceName + '_USER'];
 
   if (mongoHost && mongoPort && mongoDatabase) {
     mongoURLLabel = mongoURL = 'mongodb://';
