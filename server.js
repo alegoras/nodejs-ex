@@ -15,8 +15,8 @@ var port = 33338,//process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080
     mongoURL = "ds133338.mlab.com",//process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
-if (mongoURL == null /*&& process.env.DATABASE_SERVICE_NAME*/) {
-  var //mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
+if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
+  var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
       mongoHost = "ds133338.mlab.com",//process.env[mongoServiceName + '_SERVICE_HOST'],
       mongoPort = 33338,//process.env[mongoServiceName + '_SERVICE_PORT'],
       mongoDatabase = "alcoholapp",//process.env[mongoServiceName + '_DATABASE'],
