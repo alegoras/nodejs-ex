@@ -169,7 +169,7 @@ app.get('/postest', function (req, res) {
   // initialized.
   res.contentType("text/html");
   //res.send(util.inspect(req));
-  res.send(req.query.nombre);
+  res.send(JSON.parse(req.query.nombre));
   /*if (!db) {
     initDb(function(err){});
   }
