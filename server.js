@@ -166,7 +166,7 @@ app.get('/getusers', function (req, res) {
 app.get('/postest', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-  res.contentType("plain/text");
+  res.contentType("text/html");
   res.send(req.toString());
   /*if (!db) {
     initDb(function(err){});
