@@ -3,6 +3,7 @@ var express = require('express'),
     fs      = require('fs'),
     app     = express(),
     eps     = require('ejs'),
+    util    = require("util"),
     morgan  = require('morgan');
     
 Object.assign=require('object-assign')
@@ -167,7 +168,7 @@ app.get('/postest', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
   res.contentType("text/html");
-  res.send(JSON.stringify(req));
+  res.send(util.inspect(req));
   /*if (!db) {
     initDb(function(err){});
   }
