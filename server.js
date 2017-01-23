@@ -163,6 +163,24 @@ app.get('/getusers', function (req, res) {
   res.render('json.html');
 });
 
+app.get('/postest', function (req, res) {
+  // try to initialize the db on every request if it's not already
+  // initialized.
+  res.contentType("application/json");
+  res.send(req);
+  /*if (!db) {
+    initDb(function(err){});
+  }
+  if (db) {
+    db.collection('users').find({ "name": "sue" }).toArray(function(err,data){
+      res.send(data);
+    });
+  } else {
+    res.send('not finded');
+  }*/
+
+});
+
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
