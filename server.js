@@ -168,7 +168,8 @@ app.get('/postest', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
   res.contentType("text/html");
-  res.send(util.inspect(req));
+  //res.send(util.inspect(req));
+  res.send(req.query.nombre);
   /*if (!db) {
     initDb(function(err){});
   }
